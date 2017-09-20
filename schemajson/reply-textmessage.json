@@ -2,15 +2,71 @@
     "$schema": "http://json-schema.org/schema#",
     "type": "object",
     "properties": {
-        "text": {
+        "Beacon": {
+            "type": "object",
+            "properties": {
+                "hwid": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "hwid",
+                "type"
+            ]
+        },
+        "Message": {},
+        "Postback": {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "data"
+            ]
+        },
+        "ReplyToken": {
             "type": "string"
         },
-        "type": {
+        "Source": {
+            "type": "object",
+            "properties": {
+                "groupId": {
+                    "type": "string"
+                },
+                "roomId": {
+                    "type": "string"
+                },
+                "type": {
+                    "type": "string"
+                },
+                "userId": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "type"
+            ]
+        },
+        "Timestamp": {
+            "type": "string",
+            "format": "date-time"
+        },
+        "Type": {
             "type": "string"
         }
     },
     "required": [
-        "type",
-        "text"
+        "ReplyToken",
+        "Type",
+        "Timestamp",
+        "Source",
+        "Message",
+        "Postback",
+        "Beacon"
     ]
 }
