@@ -29,7 +29,8 @@ func MakeCommand() func(cmd *cobra.Command, args []string) {
 			panic(err)
 		}
 		fmt.Println(js)
-		sd.Read(&linebot.Event{})
+		//sd.Read(&linebot.Event{})
+		sd.Read(js)
 		ioutil.WriteFile("schemajson/reply-textmessage.json", []byte(sd.String()), os.ModePerm)
 	}
 }
